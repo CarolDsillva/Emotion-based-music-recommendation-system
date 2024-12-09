@@ -1,15 +1,22 @@
 import os
 import cv2
 import numpy as np
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, send_from_directory
 from flask_cors import CORS
 import tensorflow as tf
 from tensorflow.keras.models import load_model 
 
 # Initialize Flask app
-app = Flask(__name__)
+app = Flask(__name__, static_folder='build/static', template_folder='build')
 CORS(app)  # Enable CORS for React frontend
 
+@app.route('/')
+def serve():
+    return send_from_directory(app.template_folder, 'index.html')
+
+@app.route('/static/<path:path>')
+def serve_static(path):
+    return send_from_directory(os.path.join(app.static_folder), path)
 
 # Load the model
 model = load_model(r'C:\Users\dsilv\development\Emotion\backend\cnn_emotion_detection.h5')
