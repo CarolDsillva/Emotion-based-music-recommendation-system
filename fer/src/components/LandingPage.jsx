@@ -72,7 +72,7 @@ const LandingPage = () => {
 
     return (
         <div className="landing-container">
-            <h2>emuziek</h2>
+            <h2>🎵 emuziek</h2>
             <h1 className="hero-text">Discover the Music That Matches Your Mood</h1>
             <p className="sub-text">
                 Let emuziek analyze your emotions and deliver personalized playlists crafted just for you. Experience music that understands you.

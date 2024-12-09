@@ -13,18 +13,19 @@
 
 .hero-text {
     font-size: 3rem;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
 }
 
 .sub-text {
-    font-size: 1rem;
+    font-size: 1rem; /* Fixed the space issue here as well */
     margin-bottom: 2rem;
-    color: #c7c7c7;
+    color: #c0bebe;
 }
 
 h2{
-    font-size: 3 rem;
+    font-size: 3rem;
     font-weight: bold;
+    margin-bottom: 0rem;
     background: linear-gradient(to right, #9f7aea, #805ad5);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
