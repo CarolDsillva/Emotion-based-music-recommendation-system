@@ -1,0 +1,87 @@
+.landing-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    /* background-color: black; */
+    background: linear-gradient(135deg, #000, #2d0057, #000);
+    color: white;
+    text-align: center;
+    padding: 1rem;
+}
+
+.hero-text {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.sub-text {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    color: #c7c7c7;
+}
+
+h2{
+    font-size: 3 rem;
+    font-weight: bold;
+    background: linear-gradient(to right, #9f7aea, #805ad5);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-fill-color: transparent;
+}
+
+
+  
+.upload-container {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+input[type="file"] {
+    padding: 0.5rem;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #9333EA;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+button {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #9333EA;
+    color: white;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #520c7a;
+}
+
+.camera-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.video-preview {
+    width: 300px;
+    height: 300px;
+    border: 2px solid #fff;
+    margin-bottom: 1rem;
+}
+
+button.capture {
+    background-color: #28a745;
+}
+.error-message {
+    color: #f87171;
+    margin-top: 1rem;
+    font-size: 1rem;
+  }

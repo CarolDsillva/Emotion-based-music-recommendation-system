@@ -1,0 +1,30 @@
+.music-player {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2rem;
+    color: white;
+}
+
+.album-art {
+    width: 200px;
+    height: 200px;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+
+.fetch-button, .login-button {
+    background-color: #1db954;
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.fetch-button:hover, .login-button:hover {
+    background-color: #1ed760;
+}
