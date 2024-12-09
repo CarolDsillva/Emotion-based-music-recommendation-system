@@ -10,6 +10,7 @@ from tensorflow.keras.models import load_model
 app = Flask(__name__)
 CORS(app)  # Enable CORS for React frontend
 
+
 # Load the model
 model = load_model(r'C:\Users\dsilv\development\Emotion\backend\cnn_emotion_detection.h5')
 
