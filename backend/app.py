@@ -19,7 +19,7 @@ def serve_static(path):
     return send_from_directory(os.path.join(app.static_folder), path)
 
 # Load the model
-model = load_model(r'C:\Users\dsilv\development\Emotion\backend\cnn_emotion_detection.h5')
+model = load_model(r'.\cnn_emotion_detection.h5')
 
 # Define the emotion labels
 emotion_labels = ["Angry", "Disgust", "Fear", "Happy", "Sad", "Surprise", "Neutral"]
