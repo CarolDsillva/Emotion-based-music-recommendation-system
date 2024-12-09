@@ -3,9 +3,10 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh;
-    /* background-color: black; */
+    min-height: 100vh; /* Ensure it takes at least the full viewport height */
     background: linear-gradient(135deg, #000, #2d0057, #000);
+    background-size: cover; /* Make sure the background covers the entire viewport */
+    background-position: center; /* Center the background */
     color: white;
     text-align: center;
     padding: 1rem;
@@ -17,12 +18,12 @@
 }
 
 .sub-text {
-    font-size: 1rem; /* Fixed the space issue here as well */
+    font-size: 1rem;
     margin-bottom: 2rem;
     color: #c0bebe;
 }
 
-h2{
+h2 {
     font-size: 3rem;
     font-weight: bold;
     margin-bottom: 0rem;
@@ -32,12 +33,13 @@ h2{
     text-fill-color: transparent;
 }
 
-
-  
+/* Upload container */
 .upload-container {
     display: flex;
     gap: 1rem;
     align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 input[type="file"] {
@@ -47,6 +49,8 @@ input[type="file"] {
     color: #9333EA;
     font-size: 1rem;
     cursor: pointer;
+    width: 100%;
+    max-width: 250px;
 }
 
 button {
@@ -58,6 +62,8 @@ button {
     background-color: #9333EA;
     color: white;
     transition: background-color 0.3s;
+    width: 100%;
+    max-width: 250px;
 }
 
 button:hover {
@@ -81,8 +87,59 @@ button:hover {
 button.capture {
     background-color: #28a745;
 }
+
+/* Error message styling */
 .error-message {
     color: #f87171;
     margin-top: 1rem;
     font-size: 1rem;
-  }
+}
+
+/* Responsive Styles for Mobile and Tablets */
+@media (max-width: 768px) {
+    .hero-text {
+        font-size: 2rem;
+    }
+
+    .sub-text {
+        font-size: 0.9rem;
+    }
+
+    h2 {
+        font-size: 2.5rem;
+    }
+
+    .landing-container {
+        height: auto; /* Allow content to scroll on small screens */
+    }
+
+    .upload-container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    input[type="file"], button {
+        width: 100%;
+        max-width: none;
+    }
+
+    .video-preview {
+        width: 250px;
+        height: 250px;
+    }
+}
+
+/* Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 576px) {
+    .hero-text {
+        font-size: 1.8rem;
+    }
+
+    .sub-text {
+        font-size: 0.85rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+}
