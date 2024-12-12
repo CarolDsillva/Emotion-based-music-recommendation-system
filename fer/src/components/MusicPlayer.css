@@ -1,53 +1,166 @@
+/* General Container */
 .landing-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-height: 100vh; /* Ensure it takes at least the full viewport height */
+    min-height: 100vh;
     background: linear-gradient(135deg, #000, #2d0057, #000);
-    background-size: cover; /* Make sure the background covers the entire viewport */
-    background-position: center; /* Center the background */
+    background-size: cover;
+    background-position: center;
     color: white;
     text-align: center;
     padding: 1rem;
 }
 
-.heading {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-}
-
-.player {
-    border-radius: 10px;
-}
-
-/* .music-player {
+.navbar {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    margin-top: 2rem;
-    color: white;
+    justify-content: space-between;
 }
 
-.album-art {
-    width: 200px;
-    height: 200px;
-    border-radius: 10px;
-    margin-bottom: 1rem;
+.navbar h2 {
+    margin: 0;
+    font-size: 2.5rem;
+    white-space: nowrap;
+    flex-grow: 1;
 }
 
-.fetch-button, .login-button {
-    background-color: #1db954;
+.back-button {
+    padding: 8px 16px;
+    background-color: #805ad5;
     color: white;
     border: none;
-    padding: 0.8rem 1.5rem;
-    font-size: 1rem;
-    border-radius: 5px;
+    border-radius: 4px;
     cursor: pointer;
-    text-decoration: none;
-    transition: background-color 0.3s ease;
+    margin-left: 20px;
 }
 
-.fetch-button:hover, .login-button:hover {
-    background-color: #1ed760;
-} */
+.back-button:hover {
+    background-color: #9f7aea;
+}
+
+.heading {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.emotion-result {
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+}
+
+.recommendations-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    width: 100%;
+    max-width: 1500px;
+}
+
+.recommended-songs, .recommended-playlists {
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-top: 2rem;
+}
+
+.recommended-songs h3, .recommended-playlists h3 {
+    margin-top: 20;
+}
+
+/* Make recommended playlists section narrower */
+.recommended-playlists {
+    flex: 0 1 35%; /* Set a fixed width, allowing it to take 35% of the container */
+    max-width: 35%; /* Restrict the width to a maximum of 35% */
+}
+
+/* Recommended Songs Section */
+.recommended-songs {
+    flex: 1; /* Ensure it takes the remaining space */
+    margin-top: 2rem;
+}
+a.button-link {
+    display: inline-block;
+    padding: 2px 4px;
+    background-color: #805ad5; /* Spotify green */
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.2s;
+  }
+  
+  a.button-link:hover {
+    background-color: #805ad5; /* A slightly lighter green for hover */
+    transform: translateY(-3px); /* Lift effect */
+  }
+  
+  a.button-link:active {
+    background-color: #805ad5; /* Darker green when clicked */
+    transform: translateY(1px); /* Pressed effect */
+  }
+/* Recommendation Cards Section (Making Cards Smaller and Adjusting Spacing) */
+.recommendation-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem; /* Reduced horizontal gap between cards */
+    margin-top: 2rem;
+    width: 90%;
+    max-width: 1000px;
+}
+
+/* Other existing styles */
+.album-art {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Song Card with Subtle Glassmorphism Effect */
+.song-card {
+    background: rgba(22, 22, 22, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+    padding: 1rem;
+    color: white;
+    text-align: left;
+    width: 90%;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.song-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.7);
+}
+
+.song-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    color: #e6e6e6;
+}
+
+.song-card p {
+    font-size: 1rem;
+    margin: 0.3rem 0;
+    color: #cccccc;
+}
+
+.song-card p strong {
+    font-weight: bold;
+    color: #ffffff;
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 768px) {
+    .recommendation-cards {
+        grid-template-columns: 1fr; /* Single column on small screens */
+    }
+    .recommended-playlists {
+        max-width: 100%; /* Allow playlist to take full width on small screens */
+    }
+}

@@ -63,9 +63,10 @@ const LandingPage = () => {
                 alert(data.error);
                 return;
             }
-            navigate("/music-player", { state: { emotion: data.emotion, confidence: data.confidence } });
+
+            // Pass recommended songs in the navigate function
+            navigate("/music-player", { state: { emotion: data.emotion, confidence: data.confidence, recommendedSongs: data.recommended_songs } });
         } catch (error) {
-            
             console.error("Error detecting emotion:", error);
         }
     };
@@ -90,7 +91,6 @@ const LandingPage = () => {
                     <button onClick={handleCapture}>Capture</button>
                 </div>
             )}
-            
         </div>
     );
 };

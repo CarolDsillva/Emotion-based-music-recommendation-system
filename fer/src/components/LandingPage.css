@@ -66,6 +66,11 @@ input[type="file"] {
     max-width: 250px;
 }
 
+.detect-button:hover {
+    background-color: #805ad5;
+    color: white;
+}
+
 button {
     padding: .7rem 1rem;
     font-size: 1rem;
