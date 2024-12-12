@@ -1,10 +1,11 @@
 import React, { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import spotifyConfig from "../spotifyConfig";
+import "./MusicPlayer.css"
 
 const MusicPlayerPage = () => {
     const location = useLocation();
-    const { emotion} = location.state || {};
+    const { emotion, confidence} = location.state || {};
 
     useEffect(() => {
         if (!emotion) {
@@ -20,43 +21,22 @@ const MusicPlayerPage = () => {
     }, [emotion]);
 
     return (
-        <div style={styles.container}>
-            <h1 style={styles.heading}>Your Personalized Playlist</h1>
+        <div className="landing-container">
+            <h1 className="headinf">Your Personalized Playlist</h1>
             <p className="emotion-result">Predicted Emotion: {emotion}</p>
-            {/* <p>Confidence: {confidence}%</p> */}
+            <p>Confidence: {confidence}%</p>
             <iframe
                 id="spotify-player"
                 src=""
                 width="100%"
-                height="380"
+                height="600px"
                 frameBorder="0"
                 allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                style={styles.player}
+                className="player"
                 title="Spotify Player"
             ></iframe>
         </div>
     );
-};
-
-const styles = {
-    container: {
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        justifyContent: "center",
-        height: "100vh",
-        background: "linear-gradient(135deg, #6a0dad, #000)",
-        color: "white",
-        padding: "1rem",
-        textAlign: "center",
-    },
-    heading: {
-        fontSize: "2rem",
-        marginBottom: "1rem",
-    },
-    player: {
-        borderRadius: "10px",
-    },
 };
 
 export default MusicPlayerPage;

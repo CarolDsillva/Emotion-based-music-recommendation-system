@@ -80,7 +80,7 @@ const LandingPage = () => {
             <div className="upload-container">
                 <input type="file" id="image-upload" onChange={handleImageUpload} />
                 <button onClick={handleTakePicture}>Take Picture</button>
-                <button onClick={handleDetectEmotion}>Detect My Emotion</button>
+                <button className="detect-button" onClick={handleDetectEmotion}>Detect My Emotion</button>
             </div>
             {confirmationMessage && <p className="confirmation-message">{confirmationMessage}</p>}
             {isCameraOpen && (
