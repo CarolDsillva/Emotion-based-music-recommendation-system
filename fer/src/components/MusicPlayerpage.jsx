@@ -85,6 +85,7 @@ const MusicPlayerPage = () => {
 
         <div className="recommended-playlists">
           <h1 className="heading">Recommended Playlist</h1>
+          
           <iframe
             id="spotify-player"
             src=""

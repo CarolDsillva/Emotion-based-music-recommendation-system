@@ -118,7 +118,7 @@ def detect_emotion():
         recommended_songs = recommend_songs(emotion, data)
 
         os.remove(file_path)
-
+        
         return jsonify({
             "emotion": emotion,
             "confidence": int(confidence),
