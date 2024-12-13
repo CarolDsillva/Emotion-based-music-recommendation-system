@@ -22,7 +22,7 @@ def serve():
 def serve_static(path):
     return send_from_directory(os.path.join(app.static_folder), path)
 
-model = load_model(r'.\cnn_emotion_detection.h5')
+model = load_model(r'.\models\cnn_emotion_detection.h5')
 
 data = pd.read_csv(r"C:\Users\dsilv\development\Emotion\backend\data\data.csv")
 
