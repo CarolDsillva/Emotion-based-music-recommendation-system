@@ -73,28 +73,42 @@ def get_spotify_url(song_name, artist_name):
         song_url = result['tracks']['items'][0]['external_urls']['spotify']
         return song_url
     return None
+
+def get_spotify_embed_url(song_name, artist_name):
+    query = f"{song_name} {artist_name}"
+    result = sp.search(query, limit=1, type='track')
+    if result['tracks']['items']:
+        track_id = result['tracks']['items'][0]['id']
+        embed_url = f"https://open.spotify.com/embed/track/{track_id}?utm_source=generator&theme=0"
+        return embed_url
+    return None
+
+
+# Update the recommend_songs function
 def recommend_songs(emotion, data, num_songs=6):
     target_features = emotion_to_features.get(emotion)
     if not target_features:
         return f"Emotion '{emotion}' is not recognized."
-    
+
     scaler = MinMaxScaler()
     normalized_data = data[['valence', 'energy', 'tempo']].copy()
     normalized_data[['valence', 'energy', 'tempo']] = scaler.fit_transform(normalized_data)
-    
+
     target_vector = scaler.transform(
-        np.array([[target_features['valence'], target_features['energy'], target_features['tempo']]]))
-    
+        np.array([[target_features['valence'], target_features['energy'], target_features['tempo']]])
+    )
+
     similarities = cosine_similarity(normalized_data, target_vector).flatten()
     data['similarity'] = similarities
-    
+
     top_matches = data.sort_values(by='similarity', ascending=False).head(20)
     recommended = top_matches.sample(n=min(num_songs, len(top_matches)), random_state=None)
 
     recommended['image'] = recommended.apply(lambda row: get_album_art(row['name'], row['artists']), axis=1)
-    recommended['url'] = recommended.apply(lambda row: get_spotify_url(row['name'], row['artists']), axis=1)  # Add Spotify URL
-    
-    formatted_recommendations = recommended[['name', 'artists', 'valence', 'energy', 'tempo', 'image', 'url']].reset_index(drop=True)
+    recommended['url'] = recommended.apply(lambda row: get_spotify_url(row['name'], row['artists']), axis=1)
+    recommended['embed_url'] = recommended.apply(lambda row: get_spotify_embed_url(row['name'], row['artists']), axis=1)
+
+    formatted_recommendations = recommended[['name', 'artists', 'valence', 'energy', 'tempo', 'image', 'url', 'embed_url']].reset_index(drop=True)
     return formatted_recommendations
 
 @app.route('/detect-emotion', methods=['POST'])

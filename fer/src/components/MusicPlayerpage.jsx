@@ -57,9 +57,23 @@ const MusicPlayerPage = () => {
         <p>
           <strong>Artist:</strong> {song.artists}
         </p>
-        <a href={song.url} className="button-link" target="_blank" rel="noopener noreferrer">
-  Listen on Spotify
-</a>
+        <iframe
+          src={song.embed_url}
+          width="100%"
+          height="80px"
+          frameBorder="0"
+          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+          title={`Spotify player for ${song.name}`}
+          className="player"
+        ></iframe>
+        {/* <a
+          href={song.url}
+          className="button-link"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Listen on Spotify
+        </a> */}
         <br/>
         <p>
           <strong>Recommendation Criteria</strong>
