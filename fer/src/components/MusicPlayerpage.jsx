@@ -16,7 +16,7 @@ const MusicPlayerPage = () => {
 
     const playlistId = spotifyConfig.playlists[emotion];
     if (playlistId) {
-      const embedUrl = `https://open.spotify.com/embed/playlist/${playlistId}`;
+      const embedUrl = `https://open.spotify.com/embed/playlist/${playlistId}?utm_source=generator&theme=0`;
       document.getElementById("spotify-player").src = embedUrl;
     }
   }, [emotion]);
@@ -35,7 +35,7 @@ const MusicPlayerPage = () => {
         
       </nav>
       <p className="emotion-result">
-            Predicted Emotion: <strong>{emotion}</strong> with Confidence: <strong> {confidence}%</strong>
+            Predicted Emotion: <strong>{emotion}</strong> with Probability: <strong> {confidence}%</strong>
           </p>
       <div className="recommendations-container">
         <div className="recommended-songs">
@@ -53,10 +53,6 @@ const MusicPlayerPage = () => {
           alt={`Album art for ${song.name}`}
           className="album-art"
         />
-        <h3>{song.name}</h3>
-        <p>
-          <strong>Artist:</strong> {song.artists}
-        </p>
         <iframe
           src={song.embed_url}
           width="100%"
@@ -66,6 +62,11 @@ const MusicPlayerPage = () => {
           title={`Spotify player for ${song.name}`}
           className="player"
         ></iframe>
+        <h3>{song.name}</h3>
+        <p>
+          <strong>Artist:</strong> {song.artists}
+        </p>
+        
         {/* <a
           href={song.url}
           className="button-link"
@@ -104,7 +105,7 @@ const MusicPlayerPage = () => {
             id="spotify-player"
             src=""
             width="100%"
-            height="600px"
+            height="2100px"
             frameBorder="0"
             allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
             className="player"

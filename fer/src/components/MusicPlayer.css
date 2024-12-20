@@ -5,7 +5,7 @@
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    background: linear-gradient(135deg, #000, #2d0057, #000);
+    background: url('../assets/Thumbnail.jpg') no-repeat center center;
     background-size: cover;
     background-position: center;
     color: white;
@@ -134,7 +134,7 @@ a.button-link {
 }
 
 .song-card:hover {
-    transform: scale(1.05);
+    transform: scale(1.01);
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.7);
 }
 

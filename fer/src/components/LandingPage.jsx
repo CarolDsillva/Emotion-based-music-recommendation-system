@@ -73,10 +73,12 @@ const LandingPage = () => {
 
     return (
         <div className="landing-container">
-            <h2>🎵 emuziek</h2>
-            <h1 className="hero-text">Discover the Music That Matches Your Mood</h1>
+    
+            <h2 className="logo-name">🎵 emuziek</h2>
+            <p className="top-label">👾 ML Emotion Music Recommender</p>
+            <h1 className="hero-text">Discover Music <br/> That Matches Your Mood</h1>
             <p className="sub-text">
-                Let emuziek analyze your emotions and deliver personalized playlists crafted just for you. Experience music that understands you.
+                Let emuziek analyze your emotions and deliver personalized playlists crafted just for you. <br/> Experience music that understands you.
             </p>
             <div className="upload-container">
                 <input type="file" id="image-upload" onChange={handleImageUpload} />

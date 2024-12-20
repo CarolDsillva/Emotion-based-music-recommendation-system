@@ -1,36 +1,49 @@
+*{
+    font-family: 'montserrat';
+}
 .landing-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-height: 100vh; /* Ensure it takes at least the full viewport height */
-    background: linear-gradient(135deg, #000, #2d0057, #000);
-    background-size: cover; /* Make sure the background covers the entire viewport */
-    background-position: center; /* Center the background */
+    min-height: 100vh;
+    background: url('../assets/Thumbnail.jpg') no-repeat center center;
+    background-size: cover; /* Ensure the background covers the entire viewport */
     color: white;
     text-align: center;
     padding: 1rem;
 }
-
-.hero-text {
+.logo-name{
+    position: absolute; /* Moves the h2 to a fixed location */
+    top: 10px; 
     font-size: 3rem;
-    margin-bottom: 0.5rem;
+    font-weight: bold;
+    margin-bottom: 0rem;
+    margin-top: 12px;
+    background: linear-gradient(to right, #9f7aea, #805ad5);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-fill-color: transparent;
+}
+.top-label{
+    color: white;
+    border-radius: 25px;
+    padding: 10px;
+    background: rgba(22, 22, 22, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+    /* background-color: #9333EA; */
+}
+.hero-text {
+    font-size: 5rem;
+    margin-bottom: 0.2rem;
+    margin-top: 0;
 }
 
 .sub-text {
     font-size: 1rem;
     margin-bottom: 2rem;
     color: #c0bebe;
-}
-
-h2 {
-    font-size: 3rem;
-    font-weight: bold;
-    margin-bottom: 0rem;
-    background: linear-gradient(to right, #9f7aea, #805ad5);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-fill-color: transparent;
 }
 
 /* Upload container */
@@ -54,6 +67,7 @@ input[type="file"] {
 }
 
 .detect-button{
+    margin-top: 5px;
     padding: 0.5rem 1rem;
     font-size: 1rem;
     border: none;
@@ -85,7 +99,7 @@ button {
 }
 
 button:hover {
-    background-color: #9333EA;
+    background-color: #9e54e4;
     color: white;
 }
 
@@ -97,9 +111,10 @@ button:hover {
 }
 
 .video-preview {
-    width: 300px;
-    height: 300px;
+    width: 290px;
+    height: 220px;
     border: 2px solid #fff;
+    border-radius: 25px;
     margin-bottom: 1rem;
 }
 
@@ -114,7 +129,7 @@ button.capture {
     font-size: 1rem;
 }
 
-/* Responsive Styles for Mobile and Tablets */
+
 @media (max-width: 768px) {
     .hero-text {
         font-size: 2rem;
@@ -148,10 +163,10 @@ button.capture {
     }
 }
 
-/* Extra small devices (portrait phones, less than 576px) */
+
 @media (max-width: 576px) {
     .hero-text {
-        font-size: 1.8rem;
+        font-size: 3rem;
     }
 
     .sub-text {
