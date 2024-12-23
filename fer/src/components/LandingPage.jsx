@@ -78,12 +78,12 @@ const LandingPage = () => {
             <p className="top-label">👾 ML Emotion Music Recommender</p>
             <h1 className="hero-text">Discover Music <br/> That Matches Your Mood</h1>
             <p className="sub-text">
-                Let emuziek analyze your emotions and deliver personalized playlists crafted just for you. <br/> Experience music that understands you.
+                Analyze your emotions, recommend songs and deliver personalized playlists crafted just for you. <br/> Experience music that understands you.
             </p>
             <div className="upload-container">
                 <input type="file" id="image-upload" onChange={handleImageUpload} />
                 <button onClick={handleTakePicture}>Take Picture</button>
-                <button className="detect-button" onClick={handleDetectEmotion}>Detect My Emotion</button>
+                <button className="detect-button" onClick={handleDetectEmotion}>Detect Emotion</button>
             </div>
             {confirmationMessage && <p className="confirmation-message">{confirmationMessage}</p>}
             {isCameraOpen && (

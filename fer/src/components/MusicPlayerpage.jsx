@@ -42,12 +42,11 @@ const MusicPlayerPage = () => {
           <h1 className="heading">Recommended Music</h1>
           
 
-          {/* Recommended Songs Section */}
+
           <div className="recommendation-cards">
   {recommendedSongs.length > 0 ? (
     recommendedSongs.map((song, index) => (
       <div key={index} className="song-card">
-        {/* Album Art */}
         <img
           src={song.image}
           alt={`Album art for ${song.name}`}
@@ -67,14 +66,6 @@ const MusicPlayerPage = () => {
           <strong>Artist:</strong> {song.artists}
         </p>
         
-        {/* <a
-          href={song.url}
-          className="button-link"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Listen on Spotify
-        </a> */}
         <br/>
         <p>
           <strong>Recommendation Criteria</strong>
@@ -105,7 +96,7 @@ const MusicPlayerPage = () => {
             id="spotify-player"
             src=""
             width="100%"
-            height="2100px"
+            height="1200px"
             frameBorder="0"
             allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
             className="player"

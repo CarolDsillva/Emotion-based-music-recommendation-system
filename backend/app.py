@@ -22,7 +22,7 @@ def serve():
 def serve_static(path):
     return send_from_directory(os.path.join(app.static_folder), path)
 
-model = load_model(r'.\models\cnn_emotion_detection.h5')
+model = load_model(r'.\models\new.h5')
 
 data = pd.read_csv(r"C:\Users\dsilv\development\Emotion\backend\data\data.csv")
 
@@ -56,7 +56,7 @@ def predict_emotion(image_path):
     prediction = model.predict(img)
     emotion_index = np.argmax(prediction)
     emotion = emotion_labels[emotion_index]
-    confidence = (np.max(prediction) * 100) + 35
+    confidence = (np.max(prediction) * 100) 
     return emotion, float(confidence)
 
 def get_album_art(song_name, artist_name):

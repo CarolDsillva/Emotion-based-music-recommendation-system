@@ -5,114 +5,113 @@
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    background: url('../assets/Thumbnail.jpg') no-repeat center center;
-    background-size: cover;
-    background-position: center;
+    background: url('../assets/Thumbnail.jpg') center center / cover no-repeat;
     color: white;
     text-align: center;
-    padding: 1rem;
+    padding: 1.5rem;
 }
 
 .navbar {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
+    margin-top: 1rem;
 }
 
 .navbar h2 {
-    margin: 0;
-    font-size: 2.5rem;
+    font-size: clamp(1.8rem, 5vw, 2.5rem);
     white-space: nowrap;
-    flex-grow: 1;
+    margin: 0.5rem 0;
+    background: linear-gradient(to right, #9f7aea, #805ad5);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .back-button {
-    padding: 8px 16px;
-    background-color: #805ad5;
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    font-size: clamp(0.8rem, 1.5vw, 1rem);
+    background-color: #9333EA;
     color: white;
     border: none;
-    border-radius: 4px;
+    border-radius: 5px;
     cursor: pointer;
-    margin-left: 20px;
+    transition: background-color 0.3s, transform 0.2s;
 }
 
 .back-button:hover {
     background-color: #9f7aea;
+    transform: translateY(-2px);
 }
 
 .heading {
-    font-size: 2.5rem;
-    margin-bottom: 1.5rem;
+    font-size: clamp(2rem, 4vw, 2.5rem);
+    margin: 0;
+    margin-bottom: 1rem;
 }
 
 .emotion-result {
-    font-size: 1.3rem;
+    font-size: clamp(1.5rem, 3vw, 1.7rem);
+    margin-top: 3rem;
     margin-bottom: 1.5rem;
 }
 
 .recommendations-container {
     display: flex;
-    justify-content: space-between;
-    gap: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
     width: 100%;
     max-width: 1500px;
+    padding: 1rem;
 }
 
 .recommended-songs, .recommended-playlists {
-    padding: 20px;
+    padding: 1.5rem;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    margin-top: 2rem;
+    margin-top: .5rem;
 }
 
-.recommended-songs h3, .recommended-playlists h3 {
-    margin-top: 20;
-}
-
-/* Make recommended playlists section narrower */
-.recommended-playlists {
-    flex: 0 1 35%; /* Set a fixed width, allowing it to take 35% of the container */
-    max-width: 35%; /* Restrict the width to a maximum of 35% */
-}
-
-/* Recommended Songs Section */
 .recommended-songs {
-    flex: 1; /* Ensure it takes the remaining space */
-    margin-top: 2rem;
+    flex: 1;
+    max-width: 65%;
 }
+
+.recommended-playlists {
+    flex: 1;
+    max-width: 35%;
+}
+
 a.button-link {
     display: inline-block;
-    padding: 2px 4px;
-    background-color: #805ad5; /* Spotify green */
+    padding: 0.5rem 1rem;
+    background-color: #805ad5;
     color: white;
-    font-size: 16px;
+    font-size: clamp(0.9rem, 2vw, 1rem);
     font-weight: bold;
     text-align: center;
     text-decoration: none;
     border-radius: 5px;
     transition: background-color 0.3s, transform 0.2s;
-  }
-  
-  a.button-link:hover {
-    background-color: #805ad5; /* A slightly lighter green for hover */
-    transform: translateY(-3px); /* Lift effect */
-  }
-  
-  a.button-link:active {
-    background-color: #805ad5; /* Darker green when clicked */
-    transform: translateY(1px); /* Pressed effect */
-  }
-/* Recommendation Cards Section (Making Cards Smaller and Adjusting Spacing) */
-.recommendation-cards {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem; /* Reduced horizontal gap between cards */
-    margin-top: 2rem;
-    width: 90%;
-    max-width: 1000px;
 }
 
-/* Other existing styles */
+a.button-link:hover {
+    background-color: #6b46c1;
+    transform: translateY(-3px);
+}
+
+.recommendation-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+    width: 100%;
+    max-width: 1200px;
+    padding: 1rem;
+}
+
 .album-art {
     width: 100%;
     border-radius: 10px;
@@ -120,7 +119,6 @@ a.button-link {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
 
-/* Song Card with Subtle Glassmorphism Effect */
 .song-card {
     background: rgba(22, 22, 22, 0.08);
     border: 1px solid rgba(255, 255, 255, 0.15);
@@ -129,38 +127,59 @@ a.button-link {
     padding: 1rem;
     color: white;
     text-align: left;
-    width: 90%;
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .song-card:hover {
-    transform: scale(1.01);
+    transform: scale(1.05);
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.7);
 }
 
 .song-card h3 {
-    font-size: 1.3rem;
+    font-size: clamp(1.1rem, 2.5vw, 1.3rem);
     margin-bottom: 0.5rem;
     color: #e6e6e6;
 }
 
 .song-card p {
-    font-size: 1rem;
+    font-size: clamp(0.9rem, 2vw, 1rem);
     margin: 0.3rem 0;
     color: #cccccc;
 }
 
-.song-card p strong {
-    font-weight: bold;
-    color: #ffffff;
-}
-
 /* Responsive Design for Smaller Screens */
 @media (max-width: 768px) {
-    .recommendation-cards {
-        grid-template-columns: 1fr; /* Single column on small screens */
+    .navbar {
+        flex-direction: column;
+        align-items: center;
     }
-    .recommended-playlists {
-        max-width: 100%; /* Allow playlist to take full width on small screens */
+
+    .recommendations-container {
+        flex-direction: column;
+    }
+
+    .recommendation-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .recommended-songs, .recommended-playlists {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 576px) {
+    .emotion-result {
+        font-size: clamp(1.2rem, 3vw, 1.5rem);
+    }
+
+    .recommendation-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .song-card {
+        padding: 0.8rem;
+    }
+    iframe{
+        width: 15rem;
     }
 }
