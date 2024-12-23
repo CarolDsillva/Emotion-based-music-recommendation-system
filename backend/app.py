@@ -26,8 +26,8 @@ model = load_model(r'.\models\new.h5')
 
 data = pd.read_csv(r"C:\Users\dsilv\development\Emotion\backend\data\data.csv")
 
-client_id = "1f35b2325d49492394d29449ecad5656"
-client_secret = "bf068d1d64b3493587d891f8320dfb2e"
+client_id = "SPOTIFY_CLIENT_ID"
+client_secret = "SPOTIFY_CLIENT_SECRET"
 client_credentials_manager = SpotifyClientCredentials(client_id=client_id, client_secret=client_secret)
 sp = spotipy.Spotify(client_credentials_manager=client_credentials_manager)
 
