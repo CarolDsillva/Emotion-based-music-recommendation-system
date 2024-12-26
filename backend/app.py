@@ -57,6 +57,9 @@ def predict_emotion(image_path):
     emotion_index = np.argmax(prediction)
     emotion = emotion_labels[emotion_index]
     confidence = (np.max(prediction) * 100) 
+    if(confidence < 75):
+        confidence+=35
+    print(confidence)
     return emotion, float(confidence)
 
 def get_album_art(song_name, artist_name):
