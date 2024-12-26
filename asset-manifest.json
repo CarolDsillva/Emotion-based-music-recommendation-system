@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/Emotion-based-music-recommendation-system/static/css/main.913cbf88.css",
+    "main.js": "/Emotion-based-music-recommendation-system/static/js/main.981f8340.js",
+    "static/js/453.f9f4fd12.chunk.js": "/Emotion-based-music-recommendation-system/static/js/453.f9f4fd12.chunk.js",
+    "static/media/Thumbnail.jpg": "/Emotion-based-music-recommendation-system/static/media/Thumbnail.4625ab99407939508b53.jpg",
+    "index.html": "/Emotion-based-music-recommendation-system/index.html",
+    "main.913cbf88.css.map": "/Emotion-based-music-recommendation-system/static/css/main.913cbf88.css.map",
+    "main.981f8340.js.map": "/Emotion-based-music-recommendation-system/static/js/main.981f8340.js.map",
+    "453.f9f4fd12.chunk.js.map": "/Emotion-based-music-recommendation-system/static/js/453.f9f4fd12.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.913cbf88.css",
+    "static/js/main.981f8340.js"
+  ]
+}
