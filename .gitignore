@@ -1,4 +1,38 @@
-venv
-.ipynb_checkpoints
-archive
-.vercel
+# Python
+__pycache__/
+*.pyc
+venv/
+.venv/
+.pytest_cache/
+.ipynb_checkpoints/
+
+# Secrets and caches
+.env
+.env.local
+.env.*.local
+# spotipy token cache
+.cache
+
+# Node / React
+frontend/node_modules/
+frontend/build/
+npm-debug.log*
+
+# FER-2013 dataset for the notebooks (~300 MB, download it yourself)
+/data/
+
+# Logs and test output
+setup_log.txt
+test_log.txt
+push_log.txt
+tests/screenshots/
+
+# Local-only files
+push_to_github.bat
+/logo.png
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

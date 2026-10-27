@@ -1,0 +1,70 @@
+/* emuziek - Developed by Carol Dsilva (youtube.com/@CarolDsillva) */
+.creator-badge {
+    position: fixed;
+    right: 16px;
+    bottom: 16px;
+    z-index: 50;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 6px;
+    pointer-events: none; /* only the links are clickable */
+}
+
+.creator-badge a {
+    pointer-events: auto;
+    text-decoration: none;
+}
+
+.subscribe-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 9px 16px;
+    border-radius: 999px;
+    background: #9333ea;
+    color: #ffffff;
+    font-size: 0.9rem;
+    font-weight: 600;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.45);
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.subscribe-link:hover {
+    background: #805ad5;
+    transform: translateY(-1px);
+}
+
+.yt-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 14px;
+    border-radius: 4px;
+    background: #ff0000;
+    color: #ffffff;
+    font-size: 0.55rem;
+}
+
+.developed-by {
+    padding: 3px 10px;
+    border-radius: 999px;
+    background: rgba(10, 5, 25, 0.7);
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.75rem;
+    letter-spacing: 0.02em;
+}
+
+.developed-by:hover {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* On small screens, sit at the bottom of the page instead of floating over content */
+@media (max-width: 600px) {
+    .creator-badge {
+        position: static;
+        align-items: center;
+        margin: 32px auto 8px;
+    }
+}
